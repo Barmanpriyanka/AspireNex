@@ -25,12 +25,14 @@ body{
 }
 .quiz{
     padding:20px 0;
+    
 
 }
  .quiz h2{
     font-size: 18px;
     color:#001e4d; 
     font-weight:600;
+   margin-bottom: 20px;
  }
 
  .btn{
@@ -48,7 +50,7 @@ body{
 
  }
 
- .btn:hover{
+ .btn:hover:not([disabled]){
     background :#222;
     color:#fff;
    
