@@ -20,25 +20,32 @@
             <input type="text" id="question-input" name="question-input" required>
             <br>
             
-            <div class="answer">
-                <label for="answer1">Answer 1:</label>
-                <input type="text" id="answer1" name="answer1" required>
-                <input type="radio" id="correct-answer1" name="correct-answer" value="answer1" required>
-            </div>
-            <div class="answer">
-                <label for="answer2">Answer 2:</label>
+            <div class="answer-option">
+  <label for="answer1">Option 1:</label>
+  <input type="text" id="answer1" name="answer1" required>
+  <input type="radio" id="correct-answer1" name="correct-answer" value="answer1" required>
+  <label for="correct-answer1" class="custom-radio"></label>
+</div>
+
+            <div class="answer-option">
+                <label for="answer2">Option 2:</label>
                 <input type="text" id="answer2" name="answer2" required>
                 <input type="radio" id="correct-answer2" name="correct-answer" value="answer2" required>
+                <label for="correct-answer2" class="custom-radio"></label>
             </div>
-            <div class="answer">
-                <label for="answer3">Answer 3:</label>
+
+            <div class="answer-option">
+                <label for="answer3">Option 3:</label>
                 <input type="text" id="answer3" name="answer3" required>
                 <input type="radio" id="correct-answer3" name="correct-answer" value="answer3" required>
+                <label for="correct-answer3" class="custom-radio"></label>
             </div>
-            <div class="answer">
-                <label for="answer4">Answer 4:</label>
+
+            <div class="answer-option">
+                <label for="answer4">Option 4:</label>
                 <input type="text" id="answer4" name="answer4" required>
                 <input type="radio" id="correct-answer4" name="correct-answer" value="answer4" required>
+                <label for="correct-answer4" class="custom-radio"></label>
             </div>
 
             <button type="submit">Add Question</button>
