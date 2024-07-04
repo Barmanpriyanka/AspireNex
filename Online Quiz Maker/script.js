@@ -20,19 +20,19 @@ const questions = [
     {
         question: "What is the correct syntax to link an external CSS file in HTML?",
         answers: [
-            { text: "<link href='style.css' rel='stylesheet'>", correct: true },
-            { text: "<stylesheet>style.css</stylesheet>", correct: false },
-            { text: "<css link='style.css'>", correct: false },
-            { text: "<link src='style.css' type='text/css'>", correct: false }
+            { text: "&lt;link href='style.css' rel='stylesheet'&gt;", correct: true },
+            { text: "&lt;stylesheet&gt;style.css&lt;/stylesheet&gt;", correct: false },
+            { text: "&lt;css link='style.css'&gt;", correct: false },
+            { text: "&lt;link src='style.css' type='text/css'&gt;", correct: false }
         ]
     },
     {
         question: "Which HTML element is used to define a JavaScript script?",
         answers: [
-            { text: "<javascript>", correct: false },
-            { text: "<js>", correct: false },
-            { text: "<script>", correct: true },
-            { text: "<code>", correct: false }
+            { text: "&lt;javascript&gt;", correct: false },
+            { text: "&lt;js&gt;", correct: false },
+            { text: "&lt;script&gt;", correct: true },
+            { text: "&lt;code&gt;", correct: false }
         ]
     },
     {
@@ -63,7 +63,7 @@ const questions = [
         ]
     },
     {
-        question: "What is the purpose of the <head> element in HTML?",
+        question: "What is the purpose of the &lt;head&gt; element in HTML?",
         answers: [
             { text: "To contain the main content of the page", correct: false },
             { text: "To contain meta-information about the document", correct: true },
@@ -83,18 +83,18 @@ const questions = [
     {
         question: "How can you make a list that lists its items with numbers in HTML?",
         answers: [
-            { text: "<ul>", correct: false },
-            { text: "<ol>", correct: true },
-            { text: "<list>", correct: false },
-            { text: "<dl>", correct: false }
+            { text: "&lt;ul&gt;", correct: false },
+            { text: "&lt;ol&gt;", correct: true },
+            { text: "&lt;list&gt;", correct: false },
+            { text: "&lt;dl&gt;", correct: false }
         ]
     }
 ];
 
+
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
-const previousButton = document.getElementById("previous-btn");
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -126,7 +126,6 @@ function showQuestion() {
 }
 
 function resetState() {
-    nextButton.style.display = "none";
     while (answerButtons.firstChild) {
         answerButtons.removeChild(answerButtons.firstChild);
     }
@@ -168,18 +167,7 @@ function handleNextButton() {
     }
 }
 
-function handlePreviousButton() {
-    currentQuestionIndex--;
-    showQuestion();
-}
-
 function updateButtonVisibility() {
-    if (currentQuestionIndex === 0) {
-        previousButton.style.display = "none";
-    } else {
-        previousButton.style.display = "inline-block";
-    }
-
     if (currentQuestionIndex === questions.length - 1) {
         nextButton.innerHTML = "Finish";
     } else {
@@ -196,7 +184,5 @@ nextButton.addEventListener('click', () => {
         startQuiz();
     }
 });
-
-previousButton.addEventListener('click', handlePreviousButton);
 
 startQuiz();

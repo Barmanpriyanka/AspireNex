@@ -43,15 +43,15 @@ body {
 
 .button-container {
    display: flex;
-   justify-content: space-between;
+   justify-content: center; /* Center content horizontally */
    align-items: center; /* Center items vertically */
    margin-top: 20px;
    margin-bottom: 30px; /* Adjusted for spacing */
 }
 
-/* Styling for previous and next buttons */
-#previous-btn,
+/* Styling for next button */
 #next-btn {
+   background-color: rgb(0, 217, 155);
    padding: 10px 20px;
    color: #fff;
    border: none;
@@ -59,32 +59,19 @@ body {
    font-size: 16px;
    cursor: pointer;
    transition: background-color 0.3s ease, transform 0.2s ease;
-   width: 150px; /* Set a fixed width */
-   display: block; /* Ensure block display */
 }
 
-#previous-btn {
-   background-color: #ff9393;
-}
-
-#next-btn {
-   background-color: #9aeabc;
-   text-align: center; /* Center text */
-}
-
-#previous-btn:hover,
 #next-btn:hover {
    transform: translateY(-2px); /* Lift effect on hover */
 }
 
-#previous-btn:focus,
 #next-btn:focus {
    outline: none;
-   box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.75);
+   box-shadow: 0 0 0 2px rgb(13, 255, 186);
 }
 
 .btn {
-   background: #fff;
+   background: #ffffff;
    color: #222;
    font-weight: 400;
    width: 100%;

@@ -2,9 +2,10 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f0f0f0;
+    background-color: #001e4d;
     margin: 0;
     padding: 0;
+    color: #333; /* Improved readability */
 }
 
 .app {
@@ -23,51 +24,59 @@ h1 {
 
 form {
     margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background for form */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 label {
     display: block;
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    color: #555; /* Improved label color */
 }
 
 input[type="number"],
 input[type="text"],
 button {
     display: block;
-    width: 100%;
+    width: calc(100% - 22px); /* Adjusting width for padding and border */
     padding: 10px;
     margin-top: 5px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
+    outline: none; /* Removing default outline */
 }
 
 button[type="submit"] {
-    background-color: #007bff;
+    background-color: rgb(0, 217, 155);
     color: #fff;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
 }
 
 button[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #009688; /* Darker shade on hover */
 }
 
 .btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: rgb(0, 217, 155);
     color: #fff;
     text-decoration: none;
     border-radius: 4px;
     margin-top: 10px;
     cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
 }
 
 .btn:hover {
-    background-color: #0056b3;
+    background-color: #009688; /* Darker shade on hover */
 }
 
 #question {
@@ -81,14 +90,28 @@ button[type="submit"]:hover {
     gap: 10px;
 }
 
-button.correct {
-    background-color: #28a745 !important;
-    color: #fff !important;
+.answer {
+    display: flex;
+    align-items: center; /* Aligns items vertically centered */
 }
 
-button.incorrect {
-    background-color: #dc3545 !important;
-    color: #fff !important;
+.answer input[type="radio"] {
+    margin-right: 10px; /* Adds space between radio button and answer text */
+    transform: scale(1.5); /* Increases the size of the radio button */
+}
+
+.answer-label {
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+}
+
+.answer.correct .answer-label {
+    color: #28a745; /* Green color for correct answers */
+}
+
+.answer.incorrect .answer-label {
+    color: #dc3545; /* Red color for incorrect answers */
 }
 
 #next-btn {
@@ -118,3 +141,107 @@ button.incorrect {
     margin-bottom: 10px;
     display: block;
 }
+
+/* Basic styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #001e4d;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+}
+
+.app {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f9f9f9;
+    color: #333;
+    border-radius: 8px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="number"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Styling for the answer div */
+.answer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.answer label {
+    flex: 0 0 100px;
+}
+
+.answer input[type="text"] {
+    flex: 1;
+}
+
+.answer input[type="radio"] {
+    margin-left: 10px;
+    
+}
+
+/* Custom radio button styling */
+.custom-radio {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.custom-radio::after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background-color: green; /* Change color here */
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.2s ease-in-out;
+}
+
+input[type="radio"]:checked + .custom-radio::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
